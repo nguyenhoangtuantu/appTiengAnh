@@ -61,8 +61,10 @@ function displaySynonymsResult(data) {
   antonyms = [...new Set(antonyms)];
 
   let html = `<div class="card">`;
+  html += `<div class="result-header">`;
   html += `<div class="result-title">${data[0].word}</div>`;
   if (partOfSpeech) html += `<div class="phonetic">${partOfSpeech}</div>`;
+  html += `</div>`;
 
   if (synonyms.length > 0) {
     html += `<div class="synonym-list">`;

@@ -47,8 +47,10 @@ function displayDictionaryResult(data) {
       entry.phonetic || (entry.phonetics[0] ? entry.phonetics[0].text : "");
 
     html += `<div class="card">`;
+    html += `<div class="result-header">`;
     html += `<div class="result-title">${entry.word}</div>`;
     if (phonetic) html += `<div class="phonetic">${phonetic}</div>`;
+    html += `</div>`;
 
     entry.meanings.forEach((meaning) => {
       html += `<div class="meaning">`;
@@ -57,7 +59,8 @@ function displayDictionaryResult(data) {
       meaning.definitions.slice(0, 3).forEach((def, index) => {
         html += `<div class="definition">${index + 1}. ${def.definition}</div>`;
         if (def.example) {
-          html += `<div class="example">Ví dụ: "${def.example}"</div>`;
+          html += `<div class="example-label">Ví dụ minh họa:</div>`;
+          html += `<div class="example">"${def.example}"</div>`;
         }
       });
       html += `</div>`;

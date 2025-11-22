@@ -3,166 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Học Tiếng Anh - Tra Cứu & Dịch</title>
+    <title>English Toolkit - Tra Cứu & Dịch Tiếng Anh</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/components.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-item active" data-section="dictionary">Tra từ điển</div>
-        <div class="nav-item" data-section="translate">Dịch</div>
-        <div class="nav-item" data-section="grammar">Ngữ pháp</div>
-        <div class="nav-item" data-section="synonyms">Từ đồng nghĩa</div>
+      <div class="nav-wrapper">
+        <div class="logo">
+          English Toolkit
+          <span>Tra cứu & Học tiếng Anh</span>
+        </div>
+        <div class="nav-container">
+          <div class="nav-item active" data-section="dictionary">
+            Tra từ điển
+          </div>
+          <div class="nav-item" data-section="translate">Dịch</div>
+          <div class="nav-item" data-section="grammar">Ngữ pháp</div>
+          <div class="nav-item" data-section="synonyms">Từ đồng nghĩa</div>
+        </div>
       </div>
     </nav>
 
     <div class="container">
       <!-- TRA TỪ ĐIỂN -->
       <div id="dictionary" class="section active">
+        <div class="section-header">
+          <div class="section-title">Tra từ điển</div>
+          <div class="section-subtitle">
+            Tra nghĩa, phiên âm và ví dụ sử dụng từ tiếng Anh
+          </div>
+        </div>
+
         <div class="search-box">
-          <input type="text" id="dictInput" placeholder="Nhập từ cần tra..." />
-          <button onclick="searchDictionary()">Tra từ</button>
+          <div class="input-group">
+            <span class="input-icon">🔍</span>
+            <input
+              type="text"
+              id="dictInput"
+              placeholder="Nhập từ tiếng Anh cần tra..."
+            />
+          </div>
+          <div class="helper-text">Nhấn Enter để tra nhanh</div>
         </div>
         <div id="dictResult"></div>
       </div>
 
       <!-- DỊCH -->
       <div id="translate" class="section">
+        <div class="section-header">
+          <div class="section-title">Dịch văn bản</div>
+          <div class="section-subtitle">Dịch từ tiếng Anh sang tiếng Việt</div>
+        </div>
+
         <div class="translator-container">
           <div class="translator-box">
-            <h3>Tiếng Anh</h3>
+            <h3>🇬🇧 Tiếng Anh</h3>
             <textarea
               id="sourceText"
               placeholder="Nhập văn bản tiếng Anh..."
             ></textarea>
           </div>
           <div class="translator-box">
-            <h3>Tiếng Việt</h3>
+            <h3>🇻🇳 Tiếng Việt</h3>
             <textarea
               id="targetText"
               placeholder="Kết quả dịch sẽ hiện ở đây..."
               readonly
             ></textarea>
             <div class="button-group">
-              <button onclick="copyTranslation()">Sao chép</button>
+              <button class="btn-secondary" onclick="copyTranslation()">
+                📄 Sao chép
+              </button>
             </div>
           </div>
         </div>
-        <button onclick="translateText()">Dịch</button>
-        <div id="translateResult"></div>
+        <button onclick="translateText()">Dịch ngay</button>
       </div>
 
       <!-- NGỮ PHÁP -->
       <div id="grammar" class="section">
-        <h2 style="margin-bottom: 20px; font-size: 24px">Chủ đề Ngữ pháp</h2>
-        <div class="grammar-list">
-          <div class="grammar-item" onclick="toggleGrammar(this)">
-            <div class="grammar-title">Thì hiện tại đơn (Present Simple)</div>
-            <div class="grammar-content">
-              <p><strong>Công thức:</strong></p>
-              <p>Khẳng định: S + V(s/es)</p>
-              <p>Phủ định: S + do/does + not + V</p>
-              <p>Nghi vấn: Do/Does + S + V?</p>
-              <p style="margin-top: 15px"><strong>Ví dụ:</strong></p>
-              <p>• I work in an office.</p>
-              <p>• She doesn't like coffee.</p>
-              <p>• Do you speak English?</p>
-            </div>
+        <div class="section-header">
+          <div class="section-title">Ngữ pháp tiếng Anh</div>
+          <div class="section-subtitle">
+            Các chủ đề ngữ pháp cơ bản và nâng cao
           </div>
+        </div>
 
-          <div class="grammar-item" onclick="toggleGrammar(this)">
-            <div class="grammar-title">
-              Thì hiện tại tiếp diễn (Present Continuous)
-            </div>
-            <div class="grammar-content">
-              <p><strong>Công thức:</strong></p>
-              <p>S + am/is/are + V-ing</p>
-              <p style="margin-top: 15px"><strong>Ví dụ:</strong></p>
-              <p>• I am studying English now.</p>
-              <p>• She is reading a book.</p>
-              <p>• They are playing football.</p>
-            </div>
-          </div>
-
-          <div class="grammar-item" onclick="toggleGrammar(this)">
-            <div class="grammar-title">Thì quá khứ đơn (Past Simple)</div>
-            <div class="grammar-content">
-              <p><strong>Công thức:</strong></p>
-              <p>Khẳng định: S + V2/ed</p>
-              <p>Phủ định: S + did not + V</p>
-              <p>Nghi vấn: Did + S + V?</p>
-              <p style="margin-top: 15px"><strong>Ví dụ:</strong></p>
-              <p>• I visited Ha Noi last year.</p>
-              <p>• She didn't go to school yesterday.</p>
-              <p>• Did you see that movie?</p>
-            </div>
-          </div>
-
-          <div class="grammar-item" onclick="toggleGrammar(this)">
-            <div class="grammar-title">Modal Verbs (Động từ khuyết thiếu)</div>
-            <div class="grammar-content">
-              <p>
-                <strong>Các động từ khuyết thiếu:</strong> can, could, may,
-                might, must, should, will, would
-              </p>
-              <p><strong>Công thức:</strong> S + modal verb + V</p>
-              <p style="margin-top: 15px"><strong>Ví dụ:</strong></p>
-              <p>• I can swim. (Tôi có thể bơi)</p>
-              <p>• You should study hard. (Bạn nên học chăm chỉ)</p>
-              <p>• She must go now. (Cô ấy phải đi ngay bây giờ)</p>
-            </div>
-          </div>
-
-          <div class="grammar-item" onclick="toggleGrammar(this)">
-            <div class="grammar-title">Cách dùng A / An / The</div>
-            <div class="grammar-content">
-              <p>
-                <strong>A/An:</strong> Dùng cho danh từ số ít, không xác định
-              </p>
-              <p>• A: Trước phụ âm (a book, a car)</p>
-              <p>• An: Trước nguyên âm (an apple, an hour)</p>
-              <p style="margin-top: 15px">
-                <strong>The:</strong> Dùng cho danh từ xác định, đã được nhắc
-                đến
-              </p>
-              <p>• The book on the table is mine.</p>
-            </div>
-          </div>
-
-          <div class="grammar-item" onclick="toggleGrammar(this)">
-            <div class="grammar-title">
-              Câu điều kiện (Conditional Sentences)
-            </div>
-            <div class="grammar-content">
-              <p><strong>Loại 1:</strong> If + S + V(s/es), S + will + V</p>
-              <p>• If it rains, I will stay home.</p>
-              <p style="margin-top: 15px">
-                <strong>Loại 2:</strong> If + S + V2/ed, S + would + V
-              </p>
-              <p>• If I had money, I would buy a car.</p>
-              <p style="margin-top: 15px">
-                <strong>Loại 3:</strong> If + S + had + V3, S + would have + V3
-              </p>
-              <p>• If I had studied, I would have passed the exam.</p>
-            </div>
-          </div>
+        <div class="grammar-list" id="grammarList">
+          <!-- Grammar items will be loaded from JavaScript -->
         </div>
       </div>
 
       <!-- TỪ ĐỒNG NGHĨA -->
       <div id="synonyms" class="section">
+        <div class="section-header">
+          <div class="section-title">Từ đồng nghĩa</div>
+          <div class="section-subtitle">Tìm từ đồng nghĩa và từ trái nghĩa</div>
+        </div>
+
         <div class="search-box">
-          <input
-            type="text"
-            id="synonymInput"
-            placeholder="Nhập từ cần tra từ đồng nghĩa..."
-          />
-          <button onclick="searchSynonyms()">Tìm</button>
+          <div class="input-group">
+            <span class="input-icon">🔍</span>
+            <input
+              type="text"
+              id="synonymInput"
+              placeholder="Nhập từ cần tìm từ đồng nghĩa..."
+            />
+          </div>
+          <div class="helper-text">Nhấn Enter để tìm nhanh</div>
         </div>
         <div id="synonymResult"></div>
       </div>

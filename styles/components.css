@@ -1,0 +1,183 @@
+.card {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.result-header {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.result-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.phonetic {
+  color: #666666;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Courier New", monospace;
+}
+
+.meaning {
+  margin-bottom: 24px;
+}
+
+.part-of-speech {
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: #444444;
+  font-size: 15px;
+}
+
+.definition {
+  margin-left: 20px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.example {
+  margin-left: 20px;
+  color: #666666;
+  font-style: italic;
+  font-size: 14px;
+  padding-left: 16px;
+  border-left: 3px solid #e0e0e0;
+  margin-top: 6px;
+}
+
+.example-label {
+  font-weight: 600;
+  font-style: normal;
+  color: #888888;
+  font-size: 13px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+}
+
+.translator-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.translator-box {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.translator-box h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.grammar-list {
+  display: grid;
+  gap: 12px;
+}
+
+.grammar-item {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.grammar-item:hover {
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.grammar-title {
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grammar-title::before {
+  content: "📘";
+  font-size: 20px;
+}
+
+.grammar-content {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #f0f0f0;
+  line-height: 1.8;
+}
+
+.grammar-content.active {
+  display: block;
+}
+
+.grammar-content p {
+  margin-bottom: 8px;
+}
+
+.grammar-content strong {
+  font-weight: 600;
+}
+
+.synonym-list,
+.antonym-list {
+  margin-top: 20px;
+}
+
+.synonym-list h3,
+.antonym-list h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.word-tag {
+  border: 2px solid #e0e0e0;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.word-tag:hover {
+  border-color: #000000;
+  background-color: #f5f5f5;
+}
